@@ -1,11 +1,10 @@
 apply plugin: 'com.android.library'
 
-version = VERSION_NAME
-group = GROUP
+
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
 
     defaultConfig {
         minSdkVersion 9
@@ -14,10 +13,12 @@ android {
     lintOptions {
         abortOnError false
     }
+
 }
 
 dependencies {
-    compile 'com.pnikosis:materialish-progress:1.0'
+    api 'com.pnikosis:materialish-progress:1.7'
 }
 
-apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
+// I may push to maven central at some point, for now just using jitpack.io.
+// apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
